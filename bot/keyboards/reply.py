@@ -1,13 +1,20 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import ReplyKeyboardMarkup
 
 
-def get_start_kb():
-    button1 = KeyboardButton('📖 Реєстрація')
-    button2 = KeyboardButton('🔐 Вхід')
-    button3 = KeyboardButton('💁🏻 Допомога')
+def get_start_kb() -> ReplyKeyboardMarkup:
+    kb = ReplyKeyboardMarkup(resize_keyboard=True).row(
+        '📖 Реєстрація', '🔐 Вхід'
+    ).add('💁🏻 Допомога')
 
-    start_kb = ReplyKeyboardMarkup(resize_keyboard=True).row(
-        button1, button2
-    ).add(button3)
+    return kb
 
-    return start_kb
+
+def get_tech_kb() -> ReplyKeyboardMarkup:
+    kb = ReplyKeyboardMarkup(resize_keyboard=True)
+    kb.row('➡ Додати дефект')
+
+    return kb
+
+
+def get_repair_kb() -> ReplyKeyboardMarkup:
+    pass

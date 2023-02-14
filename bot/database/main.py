@@ -3,13 +3,15 @@ from sqlalchemy.engine import URL
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+from bot.misc import TgKeys
+
 connection_url = URL.create(
     "mssql+pyodbc",
-    username="sqlserver",
-    password="iXnPsxt1/G]f<:JK",
-    host="34.154.100.212",
+    username=TgKeys.DB_USER,
+    password=TgKeys.DB_PASS,
+    host=TgKeys.DB_HOST,
     port=1433,
-    database="DefectsServiceDB",
+    database=TgKeys.DB_NAME,
     query={
         "driver": "ODBC Driver 18 for SQL Server",
         "TrustServerCertificate": "yes"
