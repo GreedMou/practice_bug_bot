@@ -1,2 +1,1 @@
-1. Setup environment variables
-2. Run [run.py](run.py)
+Bot for practice project in SoftServe
